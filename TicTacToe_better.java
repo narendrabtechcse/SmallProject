@@ -7,7 +7,7 @@ public class TicTacBoard {
 
     public static void main(String[] args) {
         System.out.println("Please see the board with positions !!");
-        System.out.println("User will enter there position and once they all enter there chances we will declare the winner as and when someone wins !!");
+        System.out.println("User will enter there position and once they all enter there chances we will declare the winner at the end of the match !!");
 
         System.out.println("Game Begins !!");
 
@@ -33,6 +33,9 @@ public class TicTacBoard {
                 position[sc.nextInt()] = "X";
                 turn = "O";
                 printBoard(position);
+                if (checkIfWin()) {
+                    System.exit(1);
+                }
             } else {
                 System.out.print("User O please enter your position : ");
                 position[sc.nextInt()] = "O";
